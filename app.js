@@ -6,7 +6,9 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin: '*',
+}));
 
 app.all('*', async (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");
